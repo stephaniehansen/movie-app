@@ -10,15 +10,15 @@ export default class App extends Component {
     searchTerm: ""
   }
 
-  updateSearch = e => {
-    if(e.target.value.length < 1) {
-      this.componentDidMount();
-    }
-    this.setState({ searchTerm: e.target.value });
+  updateSearch = (searchTerm) => {
+    if(searchTerm.length < 1) this.componentDidMount();
+    this.setState({ searchTerm });
   }
 
-  handleChange = e => {
-    return e.target.value.length > 2 && e.key === "Enter" ? this.fetchMovies(this.state.searchTerm) : null;
+  handleChange = (e) => {
+    if(e.target.value.length > 2 && e.key === "Enter"){
+      this.fetchMovies(this.state.searchTerm);
+    } 
   } 
 
   fetchMovies = (searchTerm) => {
