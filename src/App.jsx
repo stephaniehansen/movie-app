@@ -13,7 +13,7 @@ export default class App extends Component {
   updateSearch = searchTerm => this.setState({ searchTerm });
 
   fetchMovies = (searchTerm) => {
-    fetch(`http://www.omdbapi.com/?s=harry&potter&apikey=f10a5202`)
+    fetch(`http://www.omdbapi.com/?s=harry+potter&apikey=f10a5202`)
       .then(response => response.json())
       .then(data => {
         this.setState({ movies: data.Search })})
