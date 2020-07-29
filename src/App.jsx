@@ -9,7 +9,7 @@ import movies from "./data/movies";
 export default class App extends Component {
   state = {
     movies: [],
-    currentMovie: [],
+    currentMovie: {},
     infoModal: false,
     searchTerm: "",
     searchYear: ""
@@ -47,7 +47,7 @@ export default class App extends Component {
     this.setState({ infoModal: false })
   }
 
-  componentDidMount = () =>  this.fetchMovies("movie");
+  componentDidMount = () =>  this.fetchMovies("movie", "");
 
   render() { 
     const { movies, searchTerm, infoModal, currentMovie } = this.state;
@@ -55,9 +55,8 @@ export default class App extends Component {
       <>
         <NavBar updateSearch={this.updateSearch} handleChange={this.handleChange} />
         <CardList movies={movies} searchTerm={searchTerm} fetchInfo={this.fetchInfo} />
-        {infoModal ? <Modal currentMovie={currentMovie} infoModal={infoModal} closeModal={this.closeModal}/> : null}
+        {infoModal ? <Modal currentMovie={currentMovie} closeModal={this.closeModal}/> : null}
       </>
      );
   }
 }
-
