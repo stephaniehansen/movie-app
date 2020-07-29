@@ -16,17 +16,15 @@ export default class App extends Component {
   }
 
   handleChange = (e) => {
-    if(e.target.value.length > 2 && e.key === "Enter"){
+    if(e.key === "Enter" || e.type == "click"){
       this.fetchMovies(this.state.searchTerm);
     } 
   } 
 
   fetchMovies = (searchTerm) => {
-    // if(searchTerm.length > 2)
     fetch(`http://www.omdbapi.com/?s=${searchTerm}&apikey=f10a5202`)
       .then(response => response.json())
-      .then(data => {
-        this.setState({ movies: data.Search })})
+      .then(data => this.setState({ movies: data.Search }))
       .catch(error => console.log(error)); 
   }
 
