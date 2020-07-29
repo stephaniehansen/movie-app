@@ -36,7 +36,6 @@ export default class App extends Component {
   }
 
   fetchInfo = (id) => {
-    console.log(id);
     fetch(`http://www.omdbapi.com/?i=${id}&apikey=f10a5202`)
       .then(response => response.json())
       .then(data => this.setState({ currentMovie: data, infoModal: true }))
