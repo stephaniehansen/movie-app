@@ -6,7 +6,7 @@ export default class NavBar extends Component {
     return (
       <>
         <p>Navbar</p>
-        <SearchBar />
+        <SearchBar placeholder="Search movies..." />
       </>
     );
   }
