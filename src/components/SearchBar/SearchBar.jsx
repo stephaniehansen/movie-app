@@ -7,7 +7,7 @@ export default class SearchBar extends Component {
 
     return ( 
       <div class={styles.searchBar} style={style}>
-        <input type="text" name={name} placeholder={placeholder} onInput={(e) => updateSearch(e.target)} onKeyPress={handleChange} style={style}/>
+        <input type="search" name={name} placeholder={placeholder} onInput={(e) => updateSearch(e.target)} onKeyPress={handleChange} style={style}/>
       </div>
      );
   }
