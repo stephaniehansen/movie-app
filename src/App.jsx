@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import NavBar from "./components/NavBar";
 import CardList from "./components/CardList";
+import Modal from "./components/Modal";
 
 import movies from "./data/movies";
 
 export default class App extends Component {
   state = {
     movies: [],
+    currentMovie: [],
+    infoModal: false,
     searchTerm: "",
     searchYear: ""
   }
@@ -31,14 +34,28 @@ export default class App extends Component {
       .catch(error => console.log(error)); 
   }
 
+  fetchInfo = (id) => {
+    console.log(id);
+    fetch(`http://www.omdbapi.com/?i=${id}&apikey=f10a5202`)
+      .then(response => response.json())
+      .then(data => this.setState({ currentMovie: data, infoModal: true }))
+      .catch(error => console.log(error)); 
+  }
+
+  closeModal = (e) => {
+    e.stopPropagation();
+    this.setState({ infoModal: false })
+  }
+
   componentDidMount = () =>  this.fetchMovies("movie");
 
   render() { 
-    const { movies, searchTerm } = this.state;
+    const { movies, searchTerm, infoModal, currentMovie } = this.state;
     return ( 
       <>
         <NavBar updateSearch={this.updateSearch} handleChange={this.handleChange} />
-        <CardList movies={movies} searchTerm={searchTerm} />
+        <CardList movies={movies} searchTerm={searchTerm} fetchInfo={this.fetchInfo} />
+        {infoModal ? <Modal currentMovie={currentMovie} infoModal={infoModal} closeModal={this.closeModal}/> : null}
       </>
      );
   }
