@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar";
 import CardList from "./components/CardList";
 import Modal from "./components/Modal";
 
+import library from "./data/fa-library";
 import movies from "./data/movies";
 
 export default class App extends Component {
