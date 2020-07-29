@@ -8,7 +8,6 @@ export default class SearchBar extends Component {
     return ( 
       <div class={styles.searchBar}>
         <input type="text" placeholder={placeholder} onInput={(e) => updateSearch(e.target.value)} onKeyPress={handleChange} />
-        {/* <button onClick={handleChange}>Search</button> */}
       </div>
      );
   }
