@@ -12,7 +12,7 @@ export default class App extends Component {
   }
 
   updateSearch = (e) => {
-    if(e.target.length < 1) this.componentDidMount();
+    if(e.target.value.length < 1) this.componentDidMount();
 
     if(e.target.name === "title") {
       this.setState({ searchTerm : e.target.value });
