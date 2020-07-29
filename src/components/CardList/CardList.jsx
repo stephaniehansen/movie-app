@@ -8,10 +8,16 @@ export default class CardList extends Component {
     return movies.map(movie => <Card key={movie.imdbID} movie={movie} />)
   }
 
+  getErrorMsg = () => {
+    const { searchTerm } = this.props;
+    return searchTerm.length < 1 ? 
+    "Please enter a title to search..." : "No results to display...";
+  }
+
   render() { 
     return (
       <section className={styles.cardList}>
-        {this.props.movies ? this.getMovies() : "No results to display..."}
+        {this.props.movies ? this.getMovies() : this.getErrorMsg()}
       </section>
     );
   }
