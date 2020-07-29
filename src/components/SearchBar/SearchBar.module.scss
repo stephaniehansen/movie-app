@@ -8,4 +8,10 @@
     border-bottom: 2px solid #fff;
     outline: none;
   }
+
+  @media screen and (max-width: 768px){
+    input[name="year"] {
+      display: none;
+    }
+  }
 }
