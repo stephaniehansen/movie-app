@@ -13,10 +13,11 @@ export default class App extends Component {
   updateSearch = searchTerm => this.setState({ searchTerm });
 
   render() { 
+    const { movies, searchTerm } = this.state;
     return ( 
       <>
         <NavBar updateSearch={this.updateSearch} />
-        <CardList movies={this.state.movies} searchTerm={this.state.searchTerm} />
+        <CardList movies={movies} searchTerm={searchTerm} />
       </>
      );
   }
