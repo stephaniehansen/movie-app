@@ -7,22 +7,29 @@ import movies from "./data/movies";
 export default class App extends Component {
   state = {
     movies: [],
-    searchTerm: ""
+    searchTerm: "",
+    searchYear: ""
   }
 
-  updateSearch = (searchTerm) => {
-    if(searchTerm.length < 1) this.componentDidMount();
-    this.setState({ searchTerm });
+  updateSearch = (e) => {
+    if(e.target.length < 1) this.componentDidMount();
+
+    if(e.target.name === "title") {
+      this.setState({ searchTerm : e.target.value });
+    } else {
+      this.setState({ searchYear: e.target.value });
+    }
+
   }
 
   handleChange = (e) => {
     if(e.key === "Enter" || e.type == "click"){
-      this.fetchMovies(this.state.searchTerm);
+      this.fetchMovies(this.state.searchTerm, this.state.searchYear);
     } 
   } 
 
-  fetchMovies = (searchTerm) => {
-    fetch(`http://www.omdbapi.com/?s=${searchTerm}&apikey=f10a5202`)
+  fetchMovies = (searchTerm, searchYear) => {
+    fetch(`http://www.omdbapi.com/?s=${searchTerm}&y=${searchYear}&apikey=f10a5202`)
       .then(response => response.json())
       .then(data => this.setState({ movies: data.Search }))
       .catch(error => console.log(error)); 
