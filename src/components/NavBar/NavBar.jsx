@@ -7,8 +7,12 @@ export default class NavBar extends Component {
     const { updateSearch, handleChange } = this.props;
     return (
       <nav className={styles.navBar}>
-        <p>Movies</p>
-        <SearchBar placeholder="Search movies..." updateSearch={updateSearch} handleChange={handleChange} />
+        <div class={styles.logo}>
+          <h2>Movies</h2>
+        </div>
+        <div className={styles.searchContainer}>
+          <SearchBar placeholder="Search movies..." updateSearch={updateSearch} handleChange={handleChange} />
+        </div>
       </nav>
     );
   }
