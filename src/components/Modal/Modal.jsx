@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import styles from "./Modal.module.scss"
+import styles from "./Modal.module.scss";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default class Modal extends Component {
   render() { 
@@ -9,7 +11,9 @@ export default class Modal extends Component {
     return (
       <div className={styles.modal} onClick={this.props.closeModal}>
         <div className={styles.modalContainer}>
-          <div className={styles.close} onClick={this.props.closeModal}>close</div>
+          <span className={styles.close} onClick={this.props.closeModal}>
+            <FontAwesomeIcon icon="times" />
+          </span>
           <div className={styles.modalContent}>
             <div className={styles.moviePoster}>
               <img src={Poster} alt={Title} />
