@@ -1,17 +1,39 @@
 .modal {
   height: 100%;
   width: 100%;
-  background-color: rgba(54, 54, 54, 0.548);
-  position: absolute;
+  background-color: #121212c2;
+  position: fixed;
   top: 0;
 
   .modalContainer {
-    background-color: black;
-    height: 500px;
+    background-color: #121212;
+    border: 1px solid #2e2e2e;
+    width: 500px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 500px;
+    box-shadow: 0 50px 180px 0 rgba(18, 18, 18, 0.8);
+    padding: 20px 30px 30px 30px;
+
+    .close {
+      text-align: right;
+    }
+
+    .modalContent {
+      display: flex;
+
+      div {
+        padding: 10px 0;
+      }
+
+      .moviePoster {
+        padding: 0 30px 0 0;
+
+        img {
+          height: 250px;
+        }
+      }
+    }
   }
 }
