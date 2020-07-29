@@ -11,15 +11,11 @@ export default class App extends Component {
     searchYear: ""
   }
 
-  updateSearch = (e) => {
-    if(e.target.value.length < 1) this.componentDidMount();
-
-    if(e.target.name === "title") {
-      this.setState({ searchTerm : e.target.value });
-    } else {
-      this.setState({ searchYear: e.target.value });
-    }
-
+  updateSearch = (query) => {
+    let key = "";
+    if(query.value.length < 1 && query.name === "title") this.componentDidMount();
+    query.name === "title" ? key = "searchTerm" : key = "searchYear";
+    this.setState({ [key] : query.value });
   }
 
   handleChange = (e) => {
