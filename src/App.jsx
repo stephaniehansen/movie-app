@@ -6,13 +6,17 @@ import movies from "./data/movies";
 
 export default class App extends Component {
   state = {
-    movies: movies
+    movies: movies,
+    searchTerm: ""
   }
+
+  updateSearch = searchTerm => this.setState({ searchTerm });
+
   render() { 
     return ( 
       <>
-        <NavBar />
-        <CardList movies={this.state.movies}/>
+        <NavBar updateSearch={this.updateSearch} />
+        <CardList movies={this.state.movies} searchTerm={this.state.searchTerm} />
       </>
      );
   }
