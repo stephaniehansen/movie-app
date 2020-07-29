@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from "./CardList.module.scss"
 import Card from "../Card";
 
 export default class CardList extends Component {
@@ -9,8 +10,7 @@ export default class CardList extends Component {
 
   render() { 
     return (
-      <section>
-        <p>CardList</p>
+      <section className={styles.cardList}>
         {this.getMovies()}
       </section>
     );
