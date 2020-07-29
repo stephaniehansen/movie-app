@@ -4,8 +4,10 @@ import Card from "../Card";
 
 export default class CardList extends Component {
   getMovies = () => {
-    const { movies } = this.props;
-    return movies.map(movie => <Card movie={movie} />)
+    const { movies, searchTerm } = this.props;
+    
+    return movies.filter(movie => movie.Title.toLowerCase().includes(searchTerm.toLowerCase()))
+    .map(movie => <Card key={movie.imdbID} movie={movie} searchTerm={searchTerm} />)
   }
 
   render() { 
