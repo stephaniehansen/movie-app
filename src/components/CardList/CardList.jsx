@@ -4,16 +4,14 @@ import Card from "../Card";
 
 export default class CardList extends Component {
   getMovies = () => {
-    const { movies, searchTerm } = this.props;
-    
-    return movies.filter(movie => movie.Title.toLowerCase().includes(searchTerm.toLowerCase()))
-    .map(movie => <Card key={movie.imdbID} movie={movie} searchTerm={searchTerm} />)
+    const { movies } = this.props;
+    return movies.map(movie => <Card key={movie.imdbID} movie={movie} />)
   }
 
   render() { 
     return (
       <section className={styles.cardList}>
-        {this.getMovies()}
+        {this.props.movies ? this.getMovies() : "No results to display..."}
       </section>
     );
   }
