@@ -7,16 +7,14 @@ import movies from "./data/movies";
 export default class App extends Component {
   state = {
     movies: [],
-    searchTerm: "Harry Potter"
+    searchTerm: "movie"
   }
 
-  updateSearch = (e) => this.setState({ searchTerm: e.target.value });
+  updateSearch = e => this.setState({ searchTerm: e.target.value });
 
-  handleChange = () => this.fetchMovies(this.state.searchTerm);
+  handleChange = e => e.key === "Enter" ? this.fetchMovies(this.state.searchTerm) : null;
 
   fetchMovies = (searchTerm) => {
-
-    console.log(searchTerm);
     fetch(`http://www.omdbapi.com/?s=${searchTerm}&apikey=f10a5202`)
       .then(response => response.json())
       .then(data => {
