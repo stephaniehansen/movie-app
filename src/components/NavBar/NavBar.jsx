@@ -3,11 +3,12 @@ import styles from "./NavBar.module.scss";
 import SearchBar from "../SearchBar";
 
 export default class NavBar extends Component {
-  render() { 
+  render() {
+    const { updateSearch } = this.props;
     return (
       <nav className={styles.navBar}>
-        <p>Navbar</p>
-        <SearchBar placeholder="Search movies..." />
+        <p>Movies</p>
+        <SearchBar placeholder="Search movies..." updateSearch={updateSearch} />
       </nav>
     );
   }
