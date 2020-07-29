@@ -6,8 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export default class Modal extends Component {
   render() { 
     const { Title, Plot, Runtime, Genre, Poster } = this.props.currentMovie;
-
-    console.log(this.props.currentMovie);
+    
     return (
       <div className={styles.modal} onClick={this.props.closeModal}>
         <div className={styles.modalContainer}>
