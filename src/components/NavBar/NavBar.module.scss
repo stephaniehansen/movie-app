@@ -11,5 +11,14 @@
 
   .searchContainer {
     width: 100%;
+    display: flex;
+
+    .searchIcon {
+      display: flex;
+      align-items: center;
+      margin-left: 12px;
+      font-size: 21px;
+      padding-top: 3px;
+    }
   }
 }
