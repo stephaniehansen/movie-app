@@ -11,7 +11,8 @@ export default class NavBar extends Component {
           <h2>Movies</h2>
         </div>
         <div className={styles.searchContainer}>
-          <SearchBar placeholder="Search movies..." updateSearch={updateSearch} handleChange={handleChange} />
+          <SearchBar placeholder="Search movies by title or year" updateSearch={updateSearch} handleChange={handleChange} />
+          <button onClick={handleChange}>Search</button>
         </div>
       </nav>
     );
