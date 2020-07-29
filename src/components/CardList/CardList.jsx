@@ -3,9 +3,9 @@ import styles from "./CardList.module.scss"
 import Card from "../Card";
 
 export default class CardList extends Component {
-
   getMovies = () => {
-    return this.props.movies.map(movie => <Card movie={movie} />)
+    const { movies } = this.props;
+    return movies.map(movie => <Card movie={movie} />)
   }
 
   render() { 
