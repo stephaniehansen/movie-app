@@ -4,8 +4,8 @@ import Card from "../Card";
 
 export default class CardList extends Component {
   getMovies = () => {
-    const { movies } = this.props;
-    return movies.map(movie => <Card key={movie.imdbID} movie={movie} />)
+    const { movies, fetchInfo } = this.props;
+    return movies.map(movie => <Card key={movie.imdbID} movie={movie} fetchInfo={fetchInfo} />)
   }
 
   getErrorMsg = () => {
