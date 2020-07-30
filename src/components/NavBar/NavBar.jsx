@@ -3,10 +3,6 @@ import styles from "./NavBar.module.scss";
 import SearchBar from "../SearchBar";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-
-library.add(faSearch);
 
 export default class NavBar extends Component {
   render() {
@@ -17,8 +13,8 @@ export default class NavBar extends Component {
           <h2 onClick={() => window.location.reload()}>Movies</h2>
         </div>
         <div className={styles.searchContainer}>
-          <SearchBar name="title" placeholder="Search movies by title" updateSearch={updateSearch} handleChange={handleChange} style={{width: "100%", marginRight: "10px"}} />
-          <SearchBar name="year" placeholder="Release year" updateSearch={updateSearch} handleChange={handleChange} />
+          <SearchBar type="search" name="title" placeholder="Search movies by title" updateSearch={updateSearch} handleChange={handleChange} style={{width: "100%", marginRight: "10px"}} />
+          <SearchBar type="text" name="year" placeholder="Release year" updateSearch={updateSearch} handleChange={handleChange} />
           <span className={styles.searchIcon} onClick={handleChange}>
             <FontAwesomeIcon icon="search" />
           </span>
