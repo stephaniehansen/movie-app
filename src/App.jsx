@@ -17,13 +17,13 @@ export default class App extends Component {
 
   updateSearch = (query) => {
     let key = "";
-    if(query.value.length < 1 && query.name === "title") this.componentDidMount();
+    if(query.value.length < 1 && query.name === "title") this.fetchMovies("movie", "");
     query.name === "title" ? key = "searchTerm" : key = "searchYear";
     this.setState({ [key] : query.value });
   }
 
   handleChange = (e) => {
-    if(e.key === "Enter" || e.type == "click"){
+    if(e.key === "Enter" || e.type === "click"){
       this.fetchMovies(this.state.searchTerm, this.state.searchYear);
     } 
   } 
