@@ -19,6 +19,10 @@
     .close {
       text-align: right;
       display: block;
+
+      svg {
+        cursor: pointer;
+      }   
     }
 
     .modalContent {
