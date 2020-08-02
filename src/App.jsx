@@ -54,7 +54,6 @@ export default class App extends Component {
     return ( 
       <>
         <NavBar updateSearch={this.updateSearch} handleChange={this.handleChange} />
-        <h1>Featured</h1>
         <CardList movies={movies} searchTerm={searchTerm} fetchInfo={this.fetchInfo} />
         {infoModal ? <Modal currentMovie={currentMovie} closeModal={this.closeModal}/> : null}
       </>
