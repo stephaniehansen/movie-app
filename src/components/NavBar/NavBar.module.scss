@@ -2,8 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 6vw 10px 6vw;
-  padding: 20px 0;
+  padding: 16px 6vw 18px 6vw;
+  margin-bottom: 30px;
+  background-color: #232323;
 
   .logo {
     display: flex;
@@ -30,15 +31,31 @@
   }
 
   .searchContainer {
-    width: 80%;
+    width: 100%;
     display: flex;
+    justify-content: flex-end;
+
+    .searchTitle {
+      width: 300px;
+      margin-right: 10px;
+    }
+    .searchYear {
+      input {
+        width: 150px;
+      }
+      @media screen and (max-width: 768px){
+        input {
+          display: none;
+        }
+      }
+    }
 
     .searchIcon {
       display: flex;
       align-items: center;
-      margin-left: 12px;
-      font-size: 21px;
-      padding-top: 3px;
+      margin-left: 8px;
+      font-size: 18px;
+      padding-top: 2px;
 
       svg {
         cursor: pointer;
