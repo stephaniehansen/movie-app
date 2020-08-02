@@ -6,7 +6,7 @@ export default class SearchBar extends Component {
     const { type, placeholder, name, updateSearch, handleChange, style } = this.props;
 
     return ( 
-      <div class={styles.searchBar} style={style}>
+      <div className={styles.searchBar} style={style}>
         <input type={type} name={name} placeholder={placeholder} onInput={(e) => updateSearch(e.target)} onKeyPress={handleChange} style={style}/>
       </div>
      );
