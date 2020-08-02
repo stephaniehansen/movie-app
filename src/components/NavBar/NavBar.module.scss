@@ -6,12 +6,31 @@
   padding: 20px 0;
 
   .logo {
+    display: flex;
+    align-items: center;
     margin-right: 30px;
     cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: .5px;
+
+    img {
+      height: 24px;
+      margin: 2px 4px 0 0;
+    }
+
+    .logoText {
+      span {
+        font-weight: bold;
+      }
+    }
+
   }
 
   .searchContainer {
-    width: 100%;
+    width: 80%;
     display: flex;
 
     .searchIcon {
