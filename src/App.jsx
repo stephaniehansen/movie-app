@@ -34,7 +34,9 @@ export default class App extends Component {
   } 
 
   fetchMovies = (searchTerm, searchYear) => {
-    fetch(`https://www.omdbapi.com/?s=${searchTerm}&y=${searchYear}&apikey=f10a5202`)
+    const apiKey = process.env.REACT_APP_OMDB_API_KEY;
+
+    fetch(`https://www.omdbapi.com/?s=${searchTerm}&y=${searchYear}&apikey=${apiKey}`)
       .then(response => response.json())
       .then(data => this.setState({ movies: data.Search }))
       .catch(error => console.log(error)); 
