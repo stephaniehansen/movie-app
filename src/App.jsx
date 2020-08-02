@@ -17,14 +17,18 @@ export default class App extends Component {
 
   updateSearch = (query) => {
     let key = "";
-    if(query.value.length < 1 && query.name === "title") this.fetchMovies("movie", "");
-    if(query.value.length < 1 && query.name === "year") this.fetchMovies(this.state.searchTerm, "");
+    let term = "";
+    
+    if(query.value.length < 1) {
+      query.name === "title" ? term = "movie" : term = this.state.searchTerm;
+      this.fetchMovies(term, "");
+    }
     query.name === "title" ? key = "searchTerm" : key = "searchYear";
     this.setState({ [key] : query.value });
   }
 
   handleChange = (e) => {
-    if(e.key === "Enter"){
+    if(e.key === "Enter" || e.type === "click") {
       this.fetchMovies(this.state.searchTerm, this.state.searchYear);
     } 
   } 
@@ -54,6 +58,8 @@ export default class App extends Component {
     const { movies, searchTerm, infoModal, currentMovie } = this.state;
     return ( 
       <>
+          {console.log(this.state.searchTerm)}
+
         <NavBar updateSearch={this.updateSearch} handleChange={this.handleChange} />
         <CardList movies={movies} searchTerm={searchTerm} fetchInfo={this.fetchInfo} />
         {infoModal ? <Modal currentMovie={currentMovie} closeModal={this.closeModal}/> : null}
