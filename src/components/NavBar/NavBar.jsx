@@ -28,7 +28,7 @@ export default class NavBar extends Component {
 
     return (
       <nav className={styles.navBar}>
-        <div class={styles.logo} onClick={() => window.location.reload()}>
+        <div className={styles.logo} onClick={() => window.location.reload()}>
           <span>
             <img src={logo} />
           </span>
