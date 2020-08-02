@@ -23,7 +23,7 @@ export default class App extends Component {
   }
 
   handleChange = (e) => {
-    if(e.key === "Enter" || e.type === "click"){
+    if(e.key === "Enter"){
       this.fetchMovies(this.state.searchTerm, this.state.searchYear);
     } 
   } 
