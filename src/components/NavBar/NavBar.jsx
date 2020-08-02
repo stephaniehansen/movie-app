@@ -21,7 +21,7 @@ export default class NavBar extends Component {
           <SearchBar type="search" name="title" placeholder="Search movies by title" updateSearch={updateSearch} handleChange={handleChange} style={{width: "100%", marginRight: "10px"}} />
         </div>
         <div className={styles.searchYear}>
-          <SearchBar type="text" name="year" placeholder="Release year" updateSearch={updateSearch} handleChange={handleChange} />
+          <SearchBar type="search" name="year" placeholder="Release year" updateSearch={updateSearch} handleChange={handleChange} />
         </div> 
       </>
     ) : null;
