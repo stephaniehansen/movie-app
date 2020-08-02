@@ -36,6 +36,11 @@
     .searchTitle {
       width: 300px;
       margin-right: 8px;
+
+      @media all and (max-width: 600px) {
+        width: 100%;
+        margin-right: 0;
+      }
     }
     .searchYear {
       input {
