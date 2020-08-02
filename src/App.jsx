@@ -53,6 +53,7 @@ export default class App extends Component {
     const { movies, searchTerm, infoModal, currentMovie } = this.state;
     return ( 
       <>
+        <h1>Featured</h1>
         <NavBar updateSearch={this.updateSearch} handleChange={this.handleChange} />
         <CardList movies={movies} searchTerm={searchTerm} fetchInfo={this.fetchInfo} />
         {infoModal ? <Modal currentMovie={currentMovie} closeModal={this.closeModal}/> : null}
