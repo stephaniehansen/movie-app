@@ -29,7 +29,7 @@ export default class App extends Component {
   } 
 
   fetchMovies = (searchTerm, searchYear) => {
-    fetch(`http://www.omdbapi.com/?s=${searchTerm}&y=${searchYear}&apikey=f10a5202`)
+    fetch(`https://www.omdbapi.com/?s=${searchTerm}&y=${searchYear}&apikey=f10a5202`)
       .then(response => response.json())
       .then(data => this.setState({ movies: data.Search }))
       .catch(error => console.log(error)); 
