@@ -18,6 +18,7 @@ export default class App extends Component {
   updateSearch = (query) => {
     let key = "";
     if(query.value.length < 1 && query.name === "title") this.fetchMovies("movie", "");
+    if(query.value.length < 1 && query.name === "year") this.fetchMovies(this.state.searchTerm, "");
     query.name === "title" ? key = "searchTerm" : key = "searchYear";
     this.setState({ [key] : query.value });
   }
